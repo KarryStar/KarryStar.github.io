@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#163B2B">
+<title>Karry · 考研学习站导航</title>
+<meta name="description" content="江西农业大学 27 考研专业课学习站导航：815 农业推广学、341 农业知识综合三，章节考点、名词解释、历年真题、自测练习，零基础系统上岸。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23163B2B'/%3E%3Cpath d='M32 12l16 9-16 9-16-9z' fill='%234C8C6A'/%3E%3Cpath d='M16 21l16 9v18l-16-9z' fill='%232E6B4F'/%3E%3Cpath d='M48 21l-16 9v18l16-9z' fill='%233E6B8C'/%3E%3Cpath d='M32 39l8 3.5-8 3.5-8-3.5z' fill='%23C9963D'/%3E%3C/svg%3E">
+<style>
+:root{
+  --green-950:#163B2B;--green-900:#1E4D3A;--green-700:#2E6B4F;--green-500:#4C8C6A;
+  --green-100:#E4EFE8;--green-50:#F0F6F2;--gold-600:#A97F2B;--gold-500:#C9963D;--gold-100:#F5EAD3;
+  --paper:#F8F5EE;--ink:#24312B;--ink-2:#5A6B60;--ink-3:#8A9A8E;--line:#E2E6DC;
+  --blue:#3E6B8C;--blue-bg:#E7EFF5;--red:#B84A3A;
+  --serif:"Noto Serif SC","Songti SC","SimSun",serif;
+  --sans:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.75;font-size:15px;min-height:100vh;display:flex;flex-direction:column}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:960px;margin:0 auto;padding:0 20px}
+
+/* 头部 */
+header{background:linear-gradient(135deg,var(--green-950) 0%,var(--green-900) 55%,var(--green-700) 100%);color:#F2F7F3;padding:64px 0 56px;position:relative;overflow:hidden}
+header .field{position:absolute;right:-40px;bottom:-60px;opacity:.14;pointer-events:none}
+.tag-line{font-size:12px;letter-spacing:3px;color:var(--gold-500);font-weight:600}
+header h1{font-family:var(--serif);font-size:34px;font-weight:800;margin:10px 0 12px;line-height:1.35}
+header p{font-size:15px;color:#CFE3D6;max-width:560px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.chip{font-size:12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);padding:4px 12px;border-radius:99px;color:#E8F0EA}
+
+/* 站点卡片 */
+.sites{padding:44px 0 20px}
+.sec-t{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
+.sec-t .en{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--green-900)}
+.sec-t .sub{font-size:13px;color:var(--ink-2)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:20px}
+.site-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px 22px;display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s;position:relative;overflow:hidden}
+.site-card:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(30,77,58,.12)}
+.site-card .code{font-family:var(--serif);font-size:13px;font-weight:700;letter-spacing:1px;color:#fff;background:var(--green-700);display:inline-flex;align-self:flex-start;padding:3px 12px;border-radius:99px}
+.site-card:nth-child(2) .code{background:var(--blue)}
+.site-card h2{font-family:var(--serif);font-size:20px;font-weight:800;color:var(--green-900);margin:14px 0 4px}
+.site-card .sub{font-size:12.5px;color:var(--ink-3);margin-bottom:10px}
+.site-card .desc{font-size:13.5px;color:var(--ink-2);flex:1}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+.tags span{font-size:11px;background:var(--green-50);color:var(--green-700);border:1px solid var(--green-100);padding:2px 9px;border-radius:99px}
+.enter{display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-size:14px;font-weight:700;color:var(--green-700)}
+.site-card:hover .enter{gap:10px}
+.enter svg{width:16px;height:16px;transition:transform .15s}
+.site-card:hover .enter svg{transform:translateX(2px)}
+.site-card.soon{background:repeating-linear-gradient(-45deg,#fff,#fff 12px,#FBFAF5 12px,#FBFAF5 24px);border-style:dashed}
+.site-card.soon .code{background:var(--ink-3)}
+.site-card.soon h2{color:var(--ink-3)}
+.site-card.soon .desc{color:var(--ink-3)}
+.site-card.soon .enter{color:var(--ink-3);cursor:default}
+.site-card.soon:hover{transform:none;box-shadow:none}
+
+/* 底部 */
+footer{margin-top:auto;padding:30px 0 34px;text-align:center;font-size:12.5px;color:var(--ink-3)}
+footer a{color:var(--green-700)}
+footer a:hover{text-decoration:underline}
+@media (max-width:640px){
+  header{padding:44px 0 40px}
+  header h1{font-size:26px}
+  .grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <svg class="field" width="420" height="300" viewBox="0 0 420 300" aria-hidden="true"><path d="M0 260 Q105 180 210 230 T420 210 V300 H0 Z" fill="#4C8C6A"/><path d="M0 280 Q105 210 210 250 T420 240 V300 H0 Z" fill="#2E6B4F"/><path d="M40 300 V210 c2-14 4-26 6-36 M120 300 v-80 c2-12 4-24 6-34 M200 300 v-60 c2-10 3-18 5-26 M290 300 v-70 c2-11 4-20 6-28 M360 300 v-60 c2-8 4-16 5-22" stroke="#C9963D" stroke-width="3" fill="none"/></svg>
+  <div class="wrap">
+    <div class="tag-line">JXAU · POSTGRADUATE EXAM · 2027</div>
+    <h1>考研专业课学习站</h1>
+    <p>面向零基础考生的江西农业大学专业课复习系统：考点背诵、名词解释、历年真题、自测练习，一个站点一个科目，全部免费开放。</p>
+    <div class="chips"><span class="chip">章节考点</span><span class="chip">名词翻卡</span><span class="chip">真题还原</span><span class="chip">自测刷题</span><span class="chip">进度本地保存</span></div>
+  </div>
+</header>
+
+<main class="sites">
+  <div class="wrap">
+    <div class="sec-t"><span class="en">站点导航</span><span class="sub">点击卡片进入对应科目</span></div>
+    <div class="grid">
+
+      <a class="site-card" href="/815-agri-extension/">
+        <span class="code">815</span>
+        <h2>农业推广学</h2>
+        <div class="sub">江西农业大学 · 专业课代码 815</div>
+        <div class="desc">18 章考点精讲与考频标注、76 个名词解释翻卡、2010–2026 十七年真题、90+ 自测练习，零基础 120 小时系统上岸路线。</div>
+        <div class="tags"><span>18 章节</span><span>76 名词</span><span>17 年真题</span><span>刷题即判</span></div>
+        <span class="enter">进入学习 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="site-card" href="/341-agri-comprehensive/">
+        <span class="code">341</span>
+        <h2>农业知识综合三</h2>
+        <div class="sub">江西农业大学 · 专业课代码 341</div>
+        <div class="desc">C语言程序设计、农业机械与装备、数据库技术与应用三科各 50 分：17 章考点、机械图集与动画演示、2020–2022 真题还原。</div>
+        <div class="tags"><span>C 语言</span><span>农业机械</span><span>数据库</span><span>图集动画</span></div>
+        <span class="enter">进入学习 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <div class="site-card soon" aria-disabled="true">
+        <span class="code">···</span>
+        <h2>第三个站点</h2>
+        <div class="sub">建设中 · 敬请期待</div>
+        <div class="desc">预留位置：后续新科目学习站将发布在这里。</div>
+        <div class="tags"><span>即将上线</span></div>
+        <span class="enter">敬请期待</span>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    学习站基于 <a href="https://github.com/KarryStar">KarryStar</a> 整理的考纲与真题资料构建 · 仅供学习交流<br>
+    学习进度保存在你自己的浏览器本地，不会上传
+  </div>
+</footer>
+
+</body>
+</html>
