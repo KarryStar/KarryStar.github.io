@@ -3,7 +3,7 @@
    策略：同源 network-first（离线回退缓存，保证题库更新即时可见）；
         跨域（ECharts 等 CDN）cache-first；视频 Range 请求直连不缓存。
    内容更新后请递增 VER 以清理旧缓存。 */
-const VER = "v1.0.0";
+const VER = "v1.0.1";
 const CACHE = "karrystudy-" + VER;
 const PRECACHE = [
   "./", "./index.html", "./manifest.webmanifest",
@@ -15,6 +15,7 @@ self.addEventListener("install", e => {
   e.waitUntil((async () => {
     const c = await caches.open(CACHE);
     await Promise.all(PRECACHE.map(u => c.add(u).catch(() => {})));
+    await self.skipWaiting(); /* 新版本立即接管，不等待旧标签页关闭 */
   })());
 });
 
@@ -48,7 +49,8 @@ self.addEventListener("fetch", e => {
     e.respondWith((async () => {
       const cache = await caches.open(CACHE);
       try {
-        const resp = await fetch(req);
+        /* no-cache：强制与服务器校验新鲜度，避免启发式缓存返回旧资源 */
+        const resp = await fetch(req, { cache: "no-cache" });
         if (resp && resp.ok && isAsset(url)) {
           cache.put(req, resp.clone()).then(() => trim(CACHE)).catch(() => {});
         }
