@@ -7,6 +7,11 @@
 <title>Karry · 考研学习站导航</title>
 <meta name="description" content="江西农业大学 27 考研专业课学习站导航：815 农业推广学、341 农业知识综合三，章节考点、名词解释、历年真题、自测练习，零基础系统上岸。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23163B2B'/%3E%3Cpath d='M32 12l16 9-16 9-16-9z' fill='%234C8C6A'/%3E%3Cpath d='M16 21l16 9v18l-16-9z' fill='%232E6B4F'/%3E%3Cpath d='M48 21l-16 9v18l16-9z' fill='%233E6B8C'/%3E%3Cpath d='M32 39l8 3.5-8 3.5-8-3.5z' fill='%23C9963D'/%3E%3C/svg%3E">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="考研学习站">
 <style>
 :root{
   --green-950:#163B2B;--green-900:#1E4D3A;--green-700:#2E6B4F;--green-500:#4C8C6A;
@@ -76,7 +81,7 @@ footer a:hover{text-decoration:underline}
     <div class="tag-line">JXAU · POSTGRADUATE EXAM · 2027</div>
     <h1>考研专业课学习站</h1>
     <p>面向零基础考生的江西农业大学专业课复习系统：考点背诵、名词解释、历年真题、自测练习，一个站点一个科目，全部免费开放。</p>
-    <div class="chips"><span class="chip">章节考点</span><span class="chip">名词翻卡</span><span class="chip">真题还原</span><span class="chip">自测刷题</span><span class="chip">进度本地保存</span></div>
+    <div class="chips"><span class="chip">章节考点</span><span class="chip">名词翻卡</span><span class="chip">真题还原</span><span class="chip">自测刷题</span><span class="chip">进度本地保存</span><span class="chip">📱 可安装应用 · 离线使用 · 多设备同步</span></div>
   </div>
 </header>
 
@@ -123,5 +128,8 @@ footer a:hover{text-decoration:underline}
   </div>
 </footer>
 
+<script>
+if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("/sw.js").catch(() => {}));
+</script>
 </body>
 </html>
